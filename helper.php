@@ -1,15 +1,21 @@
 <?php
-
+/*
+ * Встановлюємо лічильники добавлених обновлених видалених
+ */
 function set_counter($add, $update, $delete){
     setcookie("add", $add);
     setcookie("update", $update);
     setcookie("delete", $delete);
 }
-
+/*
+ * Вертаємо на головну
+ */
 function redirect(){
     header('location: index.php');
 }
-
+/*
+ * Перетворюємо файл в масив
+ */
 function csv_to_array($filename='', $delimiter=',')
 {
     if(!file_exists($filename) || !is_readable($filename))
@@ -30,6 +36,9 @@ function csv_to_array($filename='', $delimiter=',')
     }
     return $data;
 }
+/*
+ * Створюємо масив з ід які не видаляти
+ */
 function csv_ids_array($csv)
 {
     $ids_file = [];
