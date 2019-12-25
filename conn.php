@@ -25,7 +25,6 @@ class Database
 
     public static function connect()
     {
-        static::$conn = null;
         if (static::$conn == null) {
             try {
                 $server_path = "mysql:host=" . static::$db_host . ";dbname=" . static::$db_name . ";charset=" . static::$charset;
