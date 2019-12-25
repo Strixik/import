@@ -41,8 +41,5 @@ class Database
         }
 
     }
-    public function getAll(){
-
-    }
 
 }
