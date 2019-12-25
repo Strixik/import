@@ -40,8 +40,9 @@ if (isset($_POST['upload'])) {
                     $query = $db_conn->prepare("DELETE FROM documets WHERE  uid NOT IN('" . $ids . "')");
                     $query->execute();
                     $delete += $query->rowCount();
-                } catch (PDOException $e) {
+                } catch (\PDOException $e) {
                     setcookie("error", $e->getMessage());
+                    die( $e->getMessage());
                 }
             }
 
@@ -49,7 +50,7 @@ if (isset($_POST['upload'])) {
             setcookie ("error", "", time() - 3600);
             redirect();
         } else {
-            setcookie("error", 'Only csv file is allowed to be upload!');
+            setcookie("error", 'Тільки csv файл може бути загружено!');
             redirect();
         }
     } else {

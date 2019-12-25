@@ -19,13 +19,13 @@ function redirect(){
 function csv_to_array($filename='', $delimiter=',')
 {
     if(!file_exists($filename) || !is_readable($filename))
-        return FALSE;
+        return false;
 
-    $header = NULL;
-    $data = array();
-    if (($handle = fopen($filename, 'r')) !== FALSE)
+    $header = null;
+    $data = [];
+    if (($handle = fopen($filename, 'r')) !== false)
     {
-        while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
+        while (($row = fgetcsv($handle, 1000, $delimiter)) !== false)
         {
             if(!$header)
                 $header = $row;

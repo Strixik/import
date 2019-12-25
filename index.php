@@ -17,7 +17,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <?php if($_COOKIE['error']): ?>
+        <?php if(isset($_COOKIE['error'])): ?>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <?php echo($_COOKIE['error']) ?>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
